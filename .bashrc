@@ -120,7 +120,9 @@ fi
 
 # My options
 
-
 # My aliases
 alias python=python3
 alias pip=pip3
+
+# Powerline
+source $HOME/.dotfiles/powerline.sh

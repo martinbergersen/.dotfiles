@@ -93,6 +93,7 @@ fi
 alias ll='ls -lh'
 alias la='ls -lha'
 alias l='ls -CF'
+alias lss='du -sch ./* | sort -h'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,8 +122,12 @@ fi
 # My options
 
 # My aliases
-alias python=python3
-alias pip=pip3
+alias python='python3'
+alias pip='pip3'
+alias t='tmux'
+alias ta='tmux attach'
+alias calc='gcalccmd'
+alias clk='tty-clock -Dsc'
 
 # Powerline
 source $HOME/.dotfiles/powerline.sh

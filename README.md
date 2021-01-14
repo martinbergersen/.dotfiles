@@ -35,13 +35,13 @@ My personal config files
 4. Create symlinks:
 
     ```shell
-    cp $HOME/.bashrc $HOME/.bashrc_old; rm $HOME/.bashrc; ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+    cp $HOME/.bashrc $HOME/.bashrc_old; rm $HOME/.bashrc; ln -s $HOME/.dotfiles/.bashrc $HOME/.bashrc
     ```
     ```shell
-    cp $HOME/.bashrc $HOME/.vimrc_old; rm $HOME/.vimrc; ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
+    cp $HOME/.bashrc $HOME/.vimrc_old; rm $HOME/.vimrc; ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
     ```
     ```shell
-    cp $HOME/.tmux.conf $HOME/.tmux.conf_old; rm $HOME/.tmux.conf; ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+    cp $HOME/.tmux.conf $HOME/.tmux.conf_old; rm $HOME/.tmux.conf; ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
     ```
 5. Start vim and run:
 

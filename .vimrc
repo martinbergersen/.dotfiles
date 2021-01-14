@@ -1,8 +1,5 @@
 " Location: ~/.vimrc
 
-" Set color scheme
-colorscheme nord
-set background=dark
 "set termguicolors
 hi Normal ctermfg=252 ctermbg=none
 
@@ -81,8 +78,12 @@ Plug 'itchyny/vim-gitbranch'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'arcticicestudio/nord-vim'   " Nord color scheme
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
+
+colorscheme dracula
+set background=dark
 
 " Lightline config
 let g:lightline = {

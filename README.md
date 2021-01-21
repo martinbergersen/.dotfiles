@@ -31,7 +31,7 @@ My personal config files
     mv $HOME/.bashrc $HOME/.bashrc_old; ln -s $HOME/.dotfiles/.bashrc $HOME/.bashrc
     ```
     ```shell
-    mv $HOME/.bashrc $HOME/.vimrc_old; ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
+    mv $HOME/.vimrc $HOME/.vimrc_old; ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
     ```
     ```shell
     mv $HOME/.tmux.conf $HOME/.tmux.conf_old; ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf

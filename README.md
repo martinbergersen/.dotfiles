@@ -22,7 +22,7 @@ My personal config files
 2. Install required packages:
 
    ```shell
-   sudo apt install vim tmux python-pip3 tty-clock
+   sudo apt install vim tmux python3-pip tty-clock
    ```
 
 3. Create symlinks:

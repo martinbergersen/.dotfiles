@@ -16,13 +16,13 @@ My personal config files
 1. Clone the repo to your home folder:
 
    ```shell
-   git clone git@github.com:martinbergersen/.dotfiles.git #HOME
+   git clone git@github.com:martinbergersen/.dotfiles.git $HOME
    ```
 
 2. Install required packages:
 
    ```shell
-   sudo apt install vim tmux python3-pip tty-clock
+   sudo apt install vim tmux tree python3-pip tty-clock
    ```
 
 3. Create symlinks:

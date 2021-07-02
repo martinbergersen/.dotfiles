@@ -1,54 +1,14 @@
 " Location: ~/.vimrc
 
-"set termguicolors
-hi Normal ctermfg=252 ctermbg=none
-
-" Enable linenumbers
-set number
-
-" Set encryption to blowfish
-set cm=blowfish2
-
-"----------------------------------------
-" STATUSLINE
-set laststatus=2
-set statusline=
-"hi StatusLine ctermbg=148
-"hi StatusLine ctermfg=
-
-" GIT branch funtions:
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-" Left side:
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %F
-set statusline+=\ %y
-
-"Right side:
-set statusline+=%=
-set statusline+=\ %p%%
-set statusline+=\ [%l,%c]
-" set statusline+=\ %l/%L(%p)
-"----------------------------------------
-
-" Set [TAB] = 2 spaces
-set tabstop=2
-set shiftwidth=4
-set expandtab
-
-" Show whitespaces
-set list
+" ===== SETUP AND KEYMAPS =====
+set number          " Enable line numbers
+set autoindent      " Enable auto indentation
+set expandtab       " Convert tabs to spaces
+set tabstop=2       " Tabs width
+set shiftwidth=2    " Indentation width
+set list            " Show special characters
 set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
+set mouse=a         " Enable mouse
 
 " Navigate tabs with Alt+arrow
 nnoremap <A-left> :tabprevious<CR>
@@ -65,7 +25,35 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-"================== PLUGINS:
+" ===== STATUSLINE CONFIG =====
+set laststatus=2
+set statusline=
+
+" GIT branch funtions:
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+" ===== LEFT:
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %F
+set statusline+=\ %y
+
+" ===== RIGHT:
+set statusline+=%=
+set statusline+=\ %p%%
+set statusline+=\ [%l,%c]
+" set statusline+=\ %l/%L(%p)
+
+" ===== PLUGINS =====
 " vim-plug: https://github.com/junegunn/vim-plug
 " Run :PlugInstall to install
 
@@ -77,15 +65,21 @@ Plug 'itchyny/vim-gitbranch'
 "Plug 'shinchu/lightline-gruvbox.vim'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'arcticicestudio/nord-vim'   " Nord color scheme
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arcticicestudio/nord-vim', { 'as': 'nord' } " Nord
+Plug 'dracula/vim', { 'as': 'dracula' } " Dracula
+Plug 'ghifarit53/tokyonight-vim'
 
 call plug#end()
 
-colorscheme dracula
+" ===== COLORS =====
+hi Normal ctermfg=252 ctermbg=none
+" set termguicolors
 set background=dark
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
+"colorscheme tokyonight
 
-" Lightline config
+" ===== LIGHTLINE CONFIG =====
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
@@ -96,6 +90,3 @@ let g:lightline = {
       \   'gitbranch':'gitbranch#name'
       \ },
       \ }
-
-set ai
-set et

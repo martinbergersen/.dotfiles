@@ -6,8 +6,8 @@ set autoindent      " Enable auto indentation
 set expandtab       " Convert tabs to spaces
 set tabstop=2       " Tabs width
 set shiftwidth=2    " Indentation width
-set list            " Show special characters
-set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
+"set list            " Show special characters
+"set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
 set mouse=a         " Enable mouse
 
 " Navigate tabs with Alt+arrow
@@ -68,16 +68,18 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'arcticicestudio/nord-vim', { 'as': 'nord' } " Nord
 Plug 'dracula/vim', { 'as': 'dracula' } " Dracula
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'ntk148v/vim-horizon'
 
 call plug#end()
 
 " ===== COLORS =====
-hi Normal ctermfg=252 ctermbg=none
-" set termguicolors
-set background=dark
+"hi Normal ctermfg=252 ctermbg=none
+"set t_Co=256
+"set termguicolors
+"set background=dark
 "let g:tokyonight_style = 'night' " available: night, storm
 "let g:tokyonight_enable_italic = 1
-"colorscheme tokyonight
+colorscheme nord
 
 " ===== LIGHTLINE CONFIG =====
 let g:lightline = {

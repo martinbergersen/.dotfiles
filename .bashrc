@@ -130,4 +130,4 @@ alias calc='gcalccmd'
 alias clk='tty-clock -Dsc'
 
 # Powerline
-source $HOME/.dotfiles/powerline.sh
+#source $HOME/.dotfiles/powerline.sh

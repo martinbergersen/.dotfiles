@@ -63,7 +63,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 "Plug 'scrooloose/nerdtree'
 "Plug 'shinchu/lightline-gruvbox.vim'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'arcticicestudio/nord-vim', { 'as': 'nord' } " Nord
 Plug 'dracula/vim', { 'as': 'dracula' } " Dracula
@@ -74,16 +74,15 @@ call plug#end()
 
 " ===== COLORS =====
 "hi Normal ctermfg=252 ctermbg=none
-"set t_Co=256
-"set termguicolors
+set termguicolors
+set term=xterm-256color
+set t_Co=256
 "set background=dark
-"let g:tokyonight_style = 'night' " available: night, storm
-"let g:tokyonight_enable_italic = 1
-colorscheme nord
+colorscheme tokyonight
 
 " ===== LIGHTLINE CONFIG =====
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'tokyonight',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'helloworld', 'gitbranch', 'readonly', 'filename', 'modified' ] ]

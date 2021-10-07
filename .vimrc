@@ -6,15 +6,15 @@ set autoindent      " Enable auto indentation
 set expandtab       " Convert tabs to spaces
 set tabstop=2       " Tabs width
 set shiftwidth=2    " Indentation width
-"set list            " Show special characters
-"set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
+set list            " Show special characters
+set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
 set mouse=a         " Enable mouse
 
 " Navigate tabs with Alt+arrow
 nnoremap <A-left> :tabprevious<CR>
 nnoremap <A-right> :tabnext<CR>
 
-" Navigating splits with Alt+HJKL
+" Navigating splits with Alt+hjkl
 nnoremap <A-J> <C-W><C-J>
 nnoremap <A-K> <C-W><C-K>
 nnoremap <A-L> <C-W><C-L>
@@ -63,7 +63,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 "Plug 'scrooloose/nerdtree'
 "Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'arcticicestudio/nord-vim', { 'as': 'nord' } " Nord
 Plug 'dracula/vim', { 'as': 'dracula' } " Dracula

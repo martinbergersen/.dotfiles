@@ -15,10 +15,10 @@ nnoremap <A-left> :tabprevious<CR>
 nnoremap <A-right> :tabnext<CR>
 
 " Navigating splits with Alt+hjkl
-nnoremap <A-J> <C-W><C-J>
-nnoremap <A-K> <C-W><C-K>
-nnoremap <A-L> <C-W><C-L>
-nnoremap <A-H> <C-W><C-H>
+nnoremap <A-j> <C-W><C-J>
+nnoremap <A-k> <C-W><C-K>
+nnoremap <A-l> <C-W><C-L>
+nnoremap <A-h> <C-W><C-H>
 
 " Enable folding with spacebar
 set foldmethod=indent

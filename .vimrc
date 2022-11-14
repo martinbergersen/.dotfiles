@@ -69,6 +69,7 @@ Plug 'arcticicestudio/nord-vim', { 'as': 'nord' } " Nord
 Plug 'dracula/vim', { 'as': 'dracula' } " Dracula
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'ntk148v/vim-horizon'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 call plug#end()
 
@@ -78,11 +79,11 @@ set termguicolors
 set term=xterm-256color
 set t_Co=256
 "set background=dark
-colorscheme tokyonight
+colorscheme catppuccin_mocha
 
 " ===== LIGHTLINE CONFIG =====
 let g:lightline = {
-      \ 'colorscheme': 'tokyonight',
+      \ 'colorscheme': 'catppuccin_mocha',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'helloworld', 'gitbranch', 'readonly', 'filename', 'modified' ] ]

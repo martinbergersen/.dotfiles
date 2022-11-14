@@ -128,6 +128,11 @@ alias t='tmux'
 alias ta='tmux attach'
 alias calc='gcalccmd'
 alias clk='tty-clock -Dsc'
+alias lt=tree
 
 # Powerline
 source $HOME/.dotfiles/powerline.sh
+
+# YubiKey
+  export SSH_AUTH_SOCK=/run/user/1002/gnupg/S.gpg-agent.ssh
+  gpgconf --launch gpg-agent

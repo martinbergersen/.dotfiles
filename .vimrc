@@ -1,4 +1,4 @@
-" ===== SETUP AND KEYMAPS =====
+" Setup
 set number          " Enable line numbers
 set cursorline      " Hightlight working line
 set autoindent      " Enable auto indentation
@@ -11,32 +11,23 @@ set mouse=a         " Enable mouse
 
 " Colours
 highlight LineNr ctermfg=White
-highlight CursorLine cterm=NONE ctermbg=DarkGrey
-highlight CursorLineNr cterm= NONE ctermfg=White ctermbg=DarkBlue
+highlight CursorLine cterm=NONE ctermbg=Black
+highlight CursorLineNr cterm=bold ctermbg=DarkBlue ctermfg=White
+highlight StatLineCmd cterm=NONE ctermbg=DarkGrey ctermfg=White
+highlight StatLineIns cterm=NONE ctermbg=DarkYellow ctermfg=White
+highlight link StatLineColour StatLineCmd
 
-" Navigate tabs with Alt+arrow
-nnoremap <A-left> :tabprevious<CR>
-nnoremap <A-right> :tabnext<CR>
-
-" Navigating splits with Alt+hjkl
-nnoremap <A-j> <C-W><C-J>
-nnoremap <A-k> <C-W><C-K>
-nnoremap <A-l> <C-W><C-L>
-nnoremap <A-h> <C-W><C-H>
+autocmd InsertLeave * highlight link StatLineColour StatLineCmd
+autocmd InsertEnter * highlight link StatLineColour StatLineIns
 
 " Enable folding with spacebar
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-" ===== LEFT:
-set statusline+=%#PmenuSel#
-set statusline+=%#LineNr#
-set statusline+=\ %F
-set statusline+=\ %y
-
-" ===== RIGHT:
-set statusline+=%=
-set statusline+=\ %p%%
-set statusline+=\ [%l,%c]
-set statusline+=\ %l/%L(%p)
+" ===== Status line config =====
+set laststatus=2                  " Show status line
+set statusline=%#StatLineColour#  " Set colours
+set statusline+=\ %F\ %y%m%r      " Filename, filetype, modified, read only
+set statusline+=%=                " Switch side
+set statusline+=\ %p%%\ [%l,%c]   " Percentage [line,column]

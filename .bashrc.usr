@@ -1,16 +1,22 @@
-# Enable Git branch visibility in the prompt
-source /usr/lib/git-core/git-sh-prompt
-
-export GIT_PS1_SHOWCOLORHINTS=1
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWUPSTREAM="auto"
-
-# Custom Prompt: [User@Host] [Directory] (GitBranch) $
-export PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w \[\e[0m\]$(__git_ps1 "(%s)") \$ '
+# Enable Git status in prompt:
+if [ -f /usr/lib/git-core/git-sh-prompt ]; then
+  source /usr/lib/git-core/git-sh-prompt
+  export GIT_PS1_SHOWCOLORHINTS=1
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  export GIT_PS1_SHOWSTASHSTATE=1
+  export GIT_PS1_SHOWUNTRACKEDFILES=1
+  export GIT_PS1_SHOWUPSTREAM="auto"
+  # Prompt: User@Host:Directory (GitBranch GitStatus) $
+  export PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w \[\e[0m\]$(__git_ps1 "(%s)") \$ '
+fi
 
 # Aliases
 alias grm="git rm"
 alias gmv="git mv"
-alias ll="ls -lah"
+alias gstat="git status"
+alias gcom="git add . && git commit -am"
+alias ll="ls -lh"
+alias la="ls -lah"
+alias wd="date '+%A %d %B'"
+alias ww="date '+%V'"
+alias wt="date '+%T'"

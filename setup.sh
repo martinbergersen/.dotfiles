@@ -3,42 +3,43 @@
 # Make sure to run the script from its location
 cd "`dirname "$0"`"
 
-# 1. Create an array with files to "install"
+# Files for linking
 files=(".tmux.conf" ".vimrc" ".bashrc.usr")
 
-# 2. Loop through array and for every file
+# Create links
 for file in "${files[@]}"; do
   target="$HOME/$file"
   source_file="$(pwd)/$file"
 
-  # Check if the file exists in the users home folder
+  # Check if the file already exists in the users home folder
   if [ -e "$target" ] || [ -L "$target" ]; then
     # If it does, ask the user for confirmation to overwrite
     read -p "$target already exists. Overwrite with symlink? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
+      # If "yes" then overwrite file with link
       ln -sf "$source_file" "$target"
       echo "Linked $target -> $source_file"
     else
       echo "Skipping $file"
     fi
   else
-    # If not, create symlink
+    # If file not pressent, create symlink
     ln -s "$source_file" "$target"
     echo "Created link $target -> $source_file"
   fi
 done
 
-# 3. Check if ~/.bashrc is sourcing ~/.bashrc.usr
-BASHRC="$HOME/.bashrc"
-SOURCE_LINE="[ -f ~/.bashrc.usr ] && . ~/.bashrc.usr"
+# Make sure ~/.bashrc is sourcing ~/.bashrc.usr
+bashrc="$HOME/.bashrc"
+source_line="[ -f ~/.bashrc.usr ] && . ~/.bashrc.usr"
 
-if [ -f "$BASHRC" ]; then
-  if ! grep -Fxq "$SOURCE_LINE" "$BASHRC"; then
-    echo "Adding source line to $BASHRC"
-    echo -e "\n# Load personal workspace settings\n$SOURCE_LINE" >> "$BASHRC"
+if [ -f "$bashrc" ]; then
+  if ! grep -Fxq "$source_line" "$bashrc"; then
+    echo "Adding source line to $bashrc"
+    echo -e "\n# Load personal workspace settings\n$source_line" >> "$bashrc"
   else
-    echo "Sourcing line already exists in $BASHRC"
+    echo "Sourcing line already exists in $bashrc"
   fi
 fi
 

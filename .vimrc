@@ -10,7 +10,7 @@ set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
 set mouse=a         " Enable mouse
 
 " Colours
-highlight LineNr ctermfg=White
+highlight LineNr ctermfg=LightGrey
 highlight CursorLine cterm=NONE ctermbg=Black
 highlight CursorLineNr cterm=bold ctermbg=DarkBlue ctermfg=White
 highlight StatLineCmd cterm=NONE ctermbg=DarkGrey ctermfg=White

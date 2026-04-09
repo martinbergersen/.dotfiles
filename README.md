@@ -35,7 +35,7 @@ Tested on Ubuntu 24.04 Noble Numbat
    ./.dotfiles/setup.sh
    ```
 
-## Author
+## Made by
 
 by Martin Bergersen - 2020-2026
 

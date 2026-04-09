@@ -14,7 +14,7 @@ highlight LineNr ctermfg=White
 highlight CursorLine cterm=NONE ctermbg=Black
 highlight CursorLineNr cterm=bold ctermbg=DarkBlue ctermfg=White
 highlight StatLineCmd cterm=NONE ctermbg=DarkGrey ctermfg=White
-highlight StatLineIns cterm=NONE ctermbg=DarkYellow ctermfg=White
+highlight StatLineIns cterm=NONE ctermbg=DarkGreen ctermfg=White
 highlight link StatLineColour StatLineCmd
 
 autocmd InsertLeave * highlight link StatLineColour StatLineCmd

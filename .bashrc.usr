@@ -9,20 +9,17 @@ if [ -f /usr/lib/git-core/git-sh-prompt ]; then
   export GIT_PS1_SHOWUNTRACKEDFILES=1
   export GIT_PS1_SHOWUPSTREAM="auto"
 
-  # Prompt: User@Host:Directory (GitBranch GitStatus) $
+  # Prompt: User@Host:Directory (GitBranch GitStatus) \newline ⤷$
   export PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w \[\e[0m\]$(__git_ps1 "(%s)")\n⤷\$ '
 fi
 
 # === ALIASES ===
-alias grm="git rm"
-alias gmv="git mv"
-alias gstat="git status"
-alias gcom="git add . && git commit -am"
-alias ll="ls -lh"
-alias la="ls -lah"
+alias grm="git rm"            # Git remove file
+alias gmv="git mv"            # Git move file
+alias gstat="git status"      # Git status
+alias gcom="git add . && git commit -am" # Git add all and commit with message
+alias ll="ls -lh"             # List human readable
+alias la="ls -lah"            # List all human readable
 alias wt="date '+%T'"         # What time?
 alias wd="date '+%A %d %B'"   # What day?
 alias ww="date '+%V'"         # What week?
-
-# === MOTD ===
-#uptime

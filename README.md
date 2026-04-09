@@ -6,50 +6,36 @@ My personal config files
 ## Files
 
 * `README.md` --- This readme file
-* `.bashrc` --- Bash config
+* `setup.sh` --- Setup script
+* `.bashrc.usr` --- User BASH config
 * `.vimrc` --- VIM config
 * `.tmux.conf` --- Tmux config
-* `powerline.sh` --- Powerline config
+
+## Requirements
+
+These configs are primarly made for Debian based systems with BASH.
+
+Tested on Ubuntu 24.04 Noble Numbat
 
 ## Install
 
-1. Clone the repo to your home folder:
+1. Make sure you have the needed packages:
 
    ```shell
-   git clone git@github.com:martinbergersen/.dotfiles.git $HOME
-   ```
+   sudo apt install git vim tmux
 
-2. Install required packages:
-
-   ```shell
-   sudo apt install vim tmux tree python3-pip tty-clock
-   ```
-
-3. Create symlinks:
-
-    ```shell
-    mv $HOME/.bashrc $HOME/.bashrc_old; ln -s $HOME/.dotfiles/.bashrc $HOME/.bashrc
-    ```
-    ```shell
-    mv $HOME/.vimrc $HOME/.vimrc_old; ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
-    ```
-    ```shell
-    mv $HOME/.tmux.conf $HOME/.tmux.conf_old; ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
-    ```
-
-4. Install [vim-plug](https://github.com/junegunn/vim-plug):
+2. Clone the repo:
 
    ```shell
-   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   git clone git@github.com:martinbergersen/.dotfiles.git
    ```
+3. Run the setup script:
 
-5. Start vim and run:
-
-    ```shell
-    :PlugInstall
-    ```
+   ```shell
+   ./.dotfiles/setup.sh
+   ```
 
 ## Author
 
-by Martin Bergersen - 2020
+by Martin Bergersen - 2020-2026
+

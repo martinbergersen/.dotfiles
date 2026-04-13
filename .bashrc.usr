@@ -18,6 +18,9 @@ alias grm="git rm"            # Git remove file
 alias gmv="git mv"            # Git move file
 alias gstat="git status"      # Git status
 alias gcom="git add . && git commit -am" # Git add all and commit with message
+alias greset="git reset --hard HEAD && \
+              git checkout main && \
+              git pull --force origin main" # Force reset to main
 alias ll="ls -lh"             # List human readable
 alias la="ls -lah"            # List all human readable
 alias wt="date '+%T'"         # What time?

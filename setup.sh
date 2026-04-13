@@ -4,7 +4,7 @@
 cd "`dirname "$0"`"
 
 # Files for linking
-files=(".tmux.conf" ".vimrc" ".bashrc.usr")
+files=(".tmux.conf" ".vimrc")
 
 # Create links
 for file in "${files[@]}"; do
@@ -30,16 +30,16 @@ for file in "${files[@]}"; do
   fi
 done
 
-# Make sure ~/.bashrc is sourcing ~/.bashrc.usr
+# Sourcing .bashrc.usr config
 bashrc="$HOME/.bashrc"
-source_line="[ -f ~/.bashrc.usr ] && . ~/.bashrc.usr"
+source_line="[ -f $(pwd)/.bashrc.usr ] && . $(pwd)/.bashrc.usr"
 
 if [ -f "$bashrc" ]; then
   if ! grep -Fxq "$source_line" "$bashrc"; then
-    echo "Adding source line to $bashrc"
-    echo -e "\n# Load personal workspace settings\n$source_line" >> "$bashrc"
+    echo "Sourcing $(pwd)/.bashrc.usr in $bashrc"
+    echo -e "\n# Source user configuration settings\n$source_line" >> "$bashrc"
   else
-    echo "Sourcing line already exists in $bashrc"
+    echo "Sourcing $(pwd)/.bashrc.usr already exists in $bashrc"
   fi
 fi
 
